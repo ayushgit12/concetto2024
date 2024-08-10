@@ -46,7 +46,7 @@ const Dashboard = () => {
     <div>
       {/* navbar */}
 
-      <div className="min-h-screen bg-[#F5E8E4]">
+      <div className="min-h-screen bg-[#F5E8E4] ">
         <h1 className="text-6xl text-right p-8 px-32 font-bold text-[#DAA520]">
           Dashboard
         </h1>
