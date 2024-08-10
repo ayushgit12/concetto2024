@@ -42,6 +42,8 @@ const Dashboard = () => {
     college: "IIT DHANBAD",
   };
 
+  const [ambassador, setAmbassador] = React.useState(user.isAmbassador);
+
   return (
     <div>
       {/* navbar */}
@@ -96,10 +98,13 @@ const Dashboard = () => {
                 </div>
               </div>
 
-              {!user.isAmbassador? 
+              {!ambassador? 
               <div className="mt-16 p-4 rounded-xl text-white text-lg bg-[#dd6341]">
                
                <p >Click below to become an Ambassador</p>
+               <button onClick={()=>{
+                     setAmbassador(true);
+               }} className="text-sm bg-yellow-500 p-1 rounded-lg mt-4">Become an Ambassador</button>
                
               </div>
                : ""}
