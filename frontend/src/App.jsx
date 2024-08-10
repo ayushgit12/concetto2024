@@ -6,6 +6,8 @@ import Dashboard from './managers/Dashboard.jsx'
 import Navbar from './components/Navbar'
 import './index.css'
 import { BrowserRouter } from 'react-router-dom';
+import Leaderboard from './managers/Leaderboard.jsx'
+
 
 
 function App() {
@@ -13,12 +15,12 @@ function App() {
   return (
     <>
 
-<BrowserRouter>
       <Navbar/>
       <Routes>
       <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/leaderboard" element={<Leaderboard />} />
       </Routes>
-      </BrowserRouter>
+    
       
     </>
   )
