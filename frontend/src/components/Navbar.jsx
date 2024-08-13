@@ -1,15 +1,20 @@
 import React from 'react'
 import {Link, NavLink} from 'react-router-dom'
+import logo from "../assets/Concetto1.png"
+import { useNavigate } from 'react-router-dom';
 
 
 export default function Navbar(){
+      const navigate = useNavigate();
+
+
     return (
         <nav>
 
         <div className='bg-peach flex flex-wrap items-center text-maroon font-semibold'>
-  <Link className="flex-auto">
+  <Link to={"/"} className="flex-auto">
     <a className="btn btn-ghost text-xl">
-        <img src="Concetto1.png" className='h-[64px]' alt="" />
+        <img src={logo} className='h-[64px]' alt="" />
     </a>
   </Link >
   <Link className='flex-auto  hover:text-orangee'>
@@ -42,9 +47,9 @@ export default function Navbar(){
   {/* <PersonOutlineIcon color='#411530'/> */}
   
   </div>
-  <ul tabIndex={0} className="dropdown-content menu rounded-box z-[1] w-52 p-2 shadow text-orangee bg-peach">
+  <ul tabIndex={0} className="dropdown-content menu rounded-box z-[1] w-52 p-2 shadow-xl text-orangee bg-peach">
     <li><Link to='/register'>Register</Link></li>
-    <li><Link to='/signup'>Sign up</Link></li>
+    <li><Link to='/login'>Sign In</Link></li>
   </ul>
 </div>
 </div>

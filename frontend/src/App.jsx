@@ -16,7 +16,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/signup" element={<Register />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/otp-verification" element={<OTP />} />
         <Route path="/otp-verified" element={<OTPVerifed />} />

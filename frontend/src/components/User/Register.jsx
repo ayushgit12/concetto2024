@@ -10,8 +10,7 @@ function Register() {
       setLoader(true);
       setTimeout(() => {
         setLoader(false);
-      }, 
-      3000);
+      }, 3000);
       console.log("Here we dwlaing with se***");
     } catch (error) {
       setLoader(false);
@@ -37,7 +36,7 @@ function Register() {
               <div class="relative">
                 <input
                   placeholder="Enter your email"
-                  class="w-full rounded-lg border-gray-300 p-4 pe-12 text-black text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent placeholder-black"
+                  class="w-full rounded-lg border-gray-300 p-4 pe-12 text-white text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent placeholder-gray-400"
                   id="email"
                   type="email"
                 />
@@ -64,7 +63,7 @@ function Register() {
             <div class="relative">
               <input
                 placeholder="Enter your password"
-                class="w-full rounded-lg border-gray-300 p-4 pe-12 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent placeholder-black"
+                class="w-full rounded-lg border-gray-300 text-white p-4 pe-12 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent placeholder-gray-400"
                 id="password"
                 type="password"
               />
@@ -95,7 +94,7 @@ function Register() {
             <div class="relative">
               <input
                 placeholder="Enter your username"
-                class="w-full rounded-lg border-gray-300 p-4 pe-12 text-black text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent placeholder-black"
+                class="w-full rounded-lg text-white border-gray-300 p-4 pe-12 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent placeholder-gray-400"
                 id="email"
                 type="email"
               />
@@ -115,7 +114,7 @@ function Register() {
             <div class="relative">
               <input
                 placeholder="Enter your mobile number "
-                class="w-full rounded-lg border-gray-300 p-4 pe-12 text-black text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-400 placeholder-black focus:border-transparent"
+                class="w-full rounded-lg border-gray-300 p-4 pe-12 text-white text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-400 placeholder-gray-400 focus:border-transparent"
                 id="email"
                 type="tel"
               />
@@ -142,7 +141,7 @@ function Register() {
               }}
             >
               <strong> Are you from IIT ISM ?</strong>
-              <label class="flex flex-col gap-2 w-8 ml-7">
+              <label class="flex flex-col gap-2 w-7 h-6 cursor-pointer ml-7">
                 <input class="peer hidden" type="checkbox" />
                 <div class="rounded-2xl h-[3px] w-1/2 bg-black duration-500 peer-checked:rotate-[225deg] origin-right peer-checked:-translate-x-[12px] peer-checked:-translate-y-[1px]"></div>
                 <div class="rounded-2xl h-[3px] w-full bg-black duration-500 peer-checked:-rotate-45"></div>
@@ -151,10 +150,9 @@ function Register() {
             </div>
             <div class="flex items-center justify-between">
               <p class="text-1xl text-gray-600">
-                <strong>Already have a account?     </strong>
+                <strong>Already have a account? </strong>
                 <Link class="underline" to="/login">
-                <strong className="text-black ml-4"> Login</strong>
-                  
+                  <strong className="text-black ml-4"> Login</strong>
                 </Link>
               </p>
               <Link
@@ -164,19 +162,19 @@ function Register() {
                 Register
               </Link>
             </div>
-            {
-            loader ? <>
-            <div class="text-center">
-              <div
-                class="w-16 h-16 border-4 border-dashed rounded-full animate-spin border-yellow-500 mx-auto"
-              ></div>
-              <h2 class="text-zinc-900 dark:text-black mt-4">Loading...</h2>
-              <p class="text-zinc-600 dark:text-black-400">
-                Your will be registerd in few minutes
-              </p>
-            </div>
-            </>: <></>
-            }
+            {loader ? (
+              <>
+                <div class="text-center">
+                  <div class="w-16 h-16 border-4 border-dashed rounded-full animate-spin border-yellow-500 mx-auto"></div>
+                  <h2 class="text-zinc-900 dark:text-black mt-4">Loading...</h2>
+                  <p class="text-zinc-600 dark:text-black-400">
+                    Your will be registered in few minutes
+                  </p>
+                </div>
+              </>
+            ) : (
+              <></>
+            )}
           </form>
         </div>
       </div>
