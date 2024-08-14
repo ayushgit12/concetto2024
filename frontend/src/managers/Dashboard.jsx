@@ -1,5 +1,7 @@
 import React from "react";
 import profile from "../assets/profile.png";
+import { MdCopyAll } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
   //       username : {
@@ -31,6 +33,8 @@ const Dashboard = () => {
   //       default: false
   //     }
 
+  const navigate = useNavigate();
+
   const user = {
     username: "Saksh123",
     fullName: "Sakshi Gupta",
@@ -40,7 +44,7 @@ const Dashboard = () => {
     isISM: true,
     isAmbassador: false,
     college: "IIT DHANBAD",
-    code:72487198319849,
+    code: 72487198319849,
   };
 
   const [ambassador, setAmbassador] = React.useState(user.isAmbassador);
@@ -50,19 +54,26 @@ const Dashboard = () => {
       {/* navbar */}
 
       <div className="min-h-screen bg-[#F5E8E4] ">
-        <h1 className="text-6xl text-right p-8 px-32 font-bold text-[#DAA520]">
+        <h1
+          onClick={() => navigate("/dashboard")}
+          className="cursor-pointer w-fit select-none text-5xl md:text-6xl text-center md:text-right p-8 md:px-32 font-bold text-[#DAA520]"
+        >
           Dashboard
         </h1>
-        <div className="flex items-center md:mx-64 py-3 bg-[#F5E8E4]">
-          <div className="flex gap-32 border border-[#D1512D] w-screen p-10 rounded-2xl">
+        <div className="flex flex-wrap items-center md:mx-64 py-3 bg-[#F5E8E4]">
+          <div className="flex flex-wrap justify-center gap-32 border lg:border-[#D1512D] w-screen p-10 rounded-2xl">
             <div>
-              <img src={profile} alt="img" className="w-60 rounded-full" />
+              <img
+                src={profile}
+                alt="img"
+                className="md:w-60 w-48 rounded-full"
+              />
               <p className="text-2xl text-center text-[#DAA520] font-bold">
                 @{user.username}
               </p>
             </div>
-            <div className="mt-12">
-              <div className="grid gap-x-56 gap-y-9 grid-cols-2">
+            <div className="md:mt-12 mt-0">
+              <div className="flex gap-4 flex-col md:grid text-black lg:gap-x-56 lg:gap-y-9 lg:grid-cols-2">
                 <div>
                   <h1 className="font-light">Full Name:</h1>
                   <p
@@ -74,14 +85,13 @@ const Dashboard = () => {
                 </div>
                 <div>
                   <h1 className="font-light">Phone Number:</h1>
-                  <p className="text-xl" style={{ fontWeight: "430" }}>
+                  <p className="text-xl mb-4" style={{ fontWeight: "430" }}>
                     +91 {user.contact}
                   </p>
                 </div>
               </div>
 
-
-              <div className="grid gap-x-56 mt-8 gap-y-9 grid-cols-2">
+              <div className="flex gap-4 flex-col md:grid text-black lg:gap-x-56 lg:gap-y-9 lg:grid-cols-2">
                 <div>
                   <h1 className="font-light">Email ID:</h1>
                   <p
@@ -99,25 +109,40 @@ const Dashboard = () => {
                 </div>
               </div>
 
-              {!ambassador? 
-              <div className="mt-16 p-4 rounded-xl text-white text-lg bg-[#dd6341]">
-               
-               <p >Click below to become an Ambassador</p>
-               <button onClick={()=>{
-                     setAmbassador(true);
-               }} className="text-sm bg-yellow-500 p-1 rounded-lg mt-4">Become an Ambassador</button>
-               
-              </div>
-               :
-               <div className="mt-16 p-4 rounded-xl text-white text-lg bg-[#dd6341]">
-                <p>Ambassador Referral Code:{user.code}</p>
-                <p>No of Registrations through your code</p>
-                <p>No of Payments complete</p>
+              {!ambassador ? (
+                <div className="md:mt-16 mt-4 p-4 rounded-xl text-white text-lg  bg-[#dd6341]">
+                  <p>Click below to become an Ambassador</p>
+                  <button
+                    onClick={() => {
+                      setAmbassador(true);
+                    }}
+                    className="text-sm bg-[#F5E8E4] text-black p-1 rounded-lg mt-4"
+                  >
+                    Become an Ambassador
+                  </button>
                 </div>
-               }
-               
-               
-              
+              ) : (
+                <div className="flex flex-col gap-1 md:mt-16 mt-4 p-4 rounded-xl text-white text-sm bg-[#dd6341]">
+                  <p className="flex flex-col">
+                    Ambassador Referral Code:{" "}
+                    <span className="flex">
+                      <span className="bg-gray-200 text-black px-1 mx-1 w-fit">
+                        {user.code}
+                      </span>
+                      <MdCopyAll
+                        className="cursor-pointer"
+                        onClick={() => {
+                          navigator.clipboard.writeText(user.code);
+                        }}
+                        fontWeight={50}
+                        size={22}
+                      />
+                    </span>
+                  </p>
+                  <p>No of Registrations through your code</p>
+                  <p>No of Payments complete</p>
+                </div>
+              )}
             </div>
           </div>
         </div>

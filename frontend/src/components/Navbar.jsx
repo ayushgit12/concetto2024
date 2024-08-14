@@ -47,7 +47,7 @@ export default function Navbar(){
   {/* <PersonOutlineIcon color='#411530'/> */}
   
   </div>
-  <ul tabIndex={0} className="dropdown-content menu rounded-box z-[1] w-52 p-2 shadow-xl text-orangee bg-peach">
+  <ul tabIndex={0} className="dropdown-content menu rounded-xl w-52 p-2 mt-4 mr-2 shadow-xl text-orangee bg-peach">
     <li><Link to='/register'>Register</Link></li>
     <li><Link to='/login'>Sign In</Link></li>
   </ul>
