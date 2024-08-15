@@ -7,14 +7,22 @@ import OTP from "./components/User/OTP.jsx";
 import OTPVerifed from "./components/User/OTPVerifed.jsx";
 import "./index.css";
 import Navbar from "./components/Navbar";
-import "./index.css";
 import Leaderboard from "./managers/Leaderboard.jsx";
+import React from 'react';
+import Home from './pages/Home'
+import Events from './pages/Events';
+import CampusAmbassador from './pages/CampusAmbassador';
+import AboutUs from './pages/AboutUs';
 
 function App() {
   return (
     <>
       <Navbar />
       <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/events" element={<Events />} />
+        <Route path="/campus-ambassador" element={<CampusAmbassador />} />
+        <Route path="/about-us" element={<AboutUs />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
