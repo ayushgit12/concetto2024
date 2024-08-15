@@ -7,12 +7,17 @@ import OTPVerifed from "./components/User/OTPVerifed.jsx";
 import "./index.css";
 import Navbar from "./components/Navbar";
 import Leaderboard from "./managers/Leaderboard.jsx";
+
+import Events from "./components/Events.jsx";
+
+=======
 import React from 'react';
 import Home from './pages/Home'
 import Events from './pages/Events';
 import CampusAmbassador from './pages/CampusAmbassador';
 import AboutUs from './pages/AboutUs';
 import SignUp from "./components/User/Register.jsx";
+
 
 function App() {
   return (
@@ -30,6 +35,10 @@ function App() {
         <Route path="/otp-verified" element={<OTPVerifed />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/leaderboard" element={<Leaderboard />} />
+        <Route path="/events" element={<Events/>}/>
+        
+        
+
       </Routes>
     </>
   );
