@@ -126,7 +126,7 @@ const ApplyForCampusAmbassador = () => {
 
   if (!isLoggedIn) {
     return (
-      <div className="min-h-screen bg-black flex items-center justify-center">
+      <div className="min-h-screen  flex items-center justify-center">
         <div className="bg-white p-8 rounded-lg shadow-xl max-w-md w-full text-center">
           <h1 className="text-3xl font-bold mb-6 text-gray-800">Campus Ambassador Program</h1>
           <p className="text-lg text-gray-700 mb-6">Please log in to access the ambassador page.</p>
@@ -139,7 +139,7 @@ const ApplyForCampusAmbassador = () => {
   }
 
   return (
-    <div className="min-h-screen bg-black flex items-center justify-center">
+    <div className="min-h-screen  flex items-center justify-center">
       <div className="bg-white p-8 rounded-lg shadow-xl max-w-md w-full">
         <h1 className="text-3xl font-bold mb-6 text-center text-gray-800">Campus Ambassador Program</h1>
         
