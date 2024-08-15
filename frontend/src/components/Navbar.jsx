@@ -1,69 +1,73 @@
-import React from 'react'
-import {Link, NavLink} from 'react-router-dom'
-import logo from "../assets/Concetto1.png"
-import { useNavigate } from 'react-router-dom';
+
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import logo from '/concettologo.png'; 
+import '../css/gradient.css';
+
+const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <nav className="bg-black border-b-3 border-custom-border shadow-sm">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
+          <div className="flex-shrink-0">
+            <Link to="/">
+              <img className="h-10 w-15" src={logo} alt="Logo" />
+            </Link>
+          </div>
+
+          {/* Hamburger Button */}
+          <div className="flex md:hidden">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="text-gray-800 hover:text-gray-600 focus:outline-none"
+            >
+              <svg
+                className="w-6 h-6"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16m-7 6h7"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <div className={`hidden md:flex md:items-baseline md:space-x-4 ${isOpen ? 'block' : 'hidden'}`}>
+            <Link to="/events" className="gradient-text px-3 py-2 rounded-md font-medium">Events</Link>
+            <Link to="/campus-ambassador" className="gradient-text px-3 py-2 rounded-md font-medium">Campus Ambassador</Link>
+            <Link to="/about-us" className="gradient-text px-3 py-2 rounded-md font-medium">About Us</Link>
+          </div>
 
 
-export default function Navbar(){
-      const navigate = useNavigate();
+          <div className={`hidden md:flex md:items-center md:ml-6 ${isOpen ? 'block' : 'hidden'}`}>
+            <Link to="/register" className="gradient-button px-4 py-2 rounded-md font-medium transition-colors">Sign Up</Link>
+            <Link to="/login" className="gradient-button ml-4 px-4 py-2 rounded-md font-medium transition-colors">Login</Link>
+          </div>
+        </div>
 
+        {/* Mobile Menu */}
+        <div className={`md:hidden ${isOpen ? 'block' : 'hidden'}`}>
+          <div className="px-2 py-3 space-y-1">
+            <Link to="/events" className="block px-3 py-2 rounded-md text-base font-medium gradient-text">Events</Link>
+            <Link to="/campus-ambassador" className="block px-3 py-2 rounded-md text-base font-medium gradient-text">Campus Ambassador</Link>
+            <Link to="/about-us" className="block px-3 py-2 rounded-md text-base font-medium gradient-text">About Us</Link>
+          </div>
+          <div className="px-2 py-3">
+            <Link to="/register" className="block px-4 py-2 rounded-md font-medium gradient-button">Sign Up</Link>
+            <Link to="/login" className="block px-4 py-2 rounded-md font-medium gradient-button mt-2">Login</Link>
+          </div>
+        </div>
+      </div>
+    </nav>
+  );
+};
 
-    return (
-        <nav>
-
-        <div className='bg-tranparent grid grid-cols-11 w-full grid-rows-1 items-center text-white '>
-            <div className='col-start-1 col-span-2'>
-
-  <NavLink to={"/"} className="flex-1 btn btn-ghost text-xl font-aclonica">
-    
-        {/* <img src={logo} className='h-[64px]' alt="" /> */}
-        Concetto 2024
-    
-  </NavLink >
-            </div>
-  <div className='col-start-5 col-span-3 flex flex-wrap'>
-
-  
-  <NavLink
-            to="/events"
-            className={({ isActive }) => 
-              `flex-auto px-4 py-2 font-poppins
-               ${isActive ? 'text-[#F9538B] font-bold' : 'text-white hover:text-[#F9538B]'}`
-            }
-          >
-            Events
-          </NavLink>
-  <NavLink className={({ isActive }) => 
-              `flex-auto px-4 py-2 font-poppins
-               ${isActive ? 'text-[#F9538B] font-bold' : 'text-white hover:text-[#F9538B]'}`
-            } to='about-us'>
-        About Us
-  </NavLink>
-  <NavLink className={({ isActive }) => 
-              `flex-auto px-4 py-2 font-poppins
-               ${isActive ? 'text-[#F9538B] font-bold' : 'text-white hover:text-[#F9538B]'}`
-            } to='/campus-ambassador'>
-        Campus Ambassador
-  </NavLink>
-  
-  </div>
-  
-
-  <div className='col-start-10 col-span-2 flex flex-row flex-wrap'>
-  <button className='flex-auto  transition-transform transform  duration-500 hover:scale-105 hover:shadow-lg font-poppins text-white bg-gradient-1 rounded-bl-lg rounded-tr-lg'
-   onClick={()=>navigate('/register')}>
-        Signup
-  </button>
-  <button 
-              className='flex-auto px-4 py-2 font-poppins text-white hover:text-[#F9538B]'
-              onClick={()=>navigate('/login')}>
-        Login
-  </button>
-
-  </div>
-
- 
-  </div>
-        </nav>
-    );
-}
+export default Navbar;
