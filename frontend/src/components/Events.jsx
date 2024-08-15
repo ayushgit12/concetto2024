@@ -6,7 +6,7 @@ import { useState } from 'react';
 import robot from '../assets/robot.jpeg'
 import dj from '../assets/dj.jpeg'
 import workshop from '../assets/workshop.jpeg'
-// import spaceImage from 'C:\COLLEGE\CyberLabs\concetto\concetto2024dev\concetto2024-devraj\frontend\src\assets\space.png'
+
 
 
 export default function Events(){
