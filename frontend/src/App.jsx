@@ -11,6 +11,7 @@ import React from 'react';
 import Home from './pages/Home'
 import Events from './pages/Events';
 import CampusAmbassador from './pages/CampusAmbassador';
+import ApplyForCampusAmbassador from './pages/ApplyForCampusAmbassador.jsx'
 import AboutUs from './pages/AboutUs';
 import SignUp from "./components/User/Register.jsx";
 
@@ -22,6 +23,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/events" element={<Events />} />
         <Route path="/campus-ambassador" element={<CampusAmbassador />} />
+        <Route path="/apply-for-ca" element={<ApplyForCampusAmbassador />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/register" element={<SignUp />} />
