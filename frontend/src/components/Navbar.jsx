@@ -12,15 +12,15 @@ export default function Navbar(){
         <nav>
 
         <div className='bg-peach flex flex-wrap items-center text-maroon font-semibold'>
-  <Link to={"/"} className="flex-auto">
-    <a className="btn btn-ghost text-xl">
+  <Link to={"/"} className="flex-auto btn btn-ghost text-xl">
+    
         <img src={logo} className='h-[64px]' alt="" />
-    </a>
+    
   </Link >
   <Link className='flex-auto  hover:text-orangee'>
         ABOUT US
   </Link>
-  <Link className='flex-auto  hover:text-orangee'>
+  <Link className='flex-auto  hover:text-orangee' to='/events'>
         EVENTS
   </Link>
   <Link className='flex-auto  hover:text-orangee'>
@@ -44,10 +44,10 @@ export default function Navbar(){
   <div className="dropdown dropdown-end">
   <div tabIndex={0} role="button" className="btn m-1 bg-peach border-transparent hover:bg-[#c4a48e] hover:border-transparent">
   <img src="personn.png" className='h-[32px] ' alt="" />    
-  {/* <PersonOutlineIcon color='#411530'/> */}
+  
   
   </div>
-  <ul tabIndex={0} className="dropdown-content menu rounded-xl w-52 p-2 mt-4 mr-2 shadow-xl text-orangee bg-peach">
+  <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow text-orangee bg-peach">
     <li><Link to='/register'>Register</Link></li>
     <li><Link to='/login'>Sign In</Link></li>
   </ul>

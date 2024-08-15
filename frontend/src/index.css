@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: 'Star Eagle Expand Bold';
+    src: 
+         url('/src/assets/stareagleexpandbold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
