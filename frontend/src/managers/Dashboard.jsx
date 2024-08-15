@@ -53,15 +53,15 @@ const Dashboard = () => {
     <div>
       {/* navbar */}
 
-      <div className="min-h-screen bg-[#F5E8E4] ">
+      <div className="min-h-screen bg-[#232323] flex flex-col items-center ">
         <h1
           onClick={() => navigate("/dashboard")}
-          className="cursor-pointer w-fit select-none text-5xl md:text-6xl text-center md:text-right p-8 md:px-32 font-bold text-[#DAA520]"
+          className="font-star-eagle cursor-pointer w-fit select-none text-5xl md:text-6xl text-center md:text-right p-8 md:px-32 font-bold text-[#CAF438]"
         >
-          Dashboard
+          profile
         </h1>
-        <div className="flex flex-wrap items-center md:mx-64 py-3 bg-[#F5E8E4]">
-          <div className="flex flex-wrap justify-center gap-32 border lg:border-[#D1512D] w-screen p-10 rounded-2xl">
+        <div className="flex flex-wrap w-[70vw] items-center md:mx-64 py-3 bg-[#232323] ">
+          <div className="flex flex-wrap justify-center gap-32 lg:border-[#D1512D] border-2 w-screen p-10 rounded-2xl ">
             <div>
               <img
                 src={profile}
@@ -73,7 +73,7 @@ const Dashboard = () => {
               </p>
             </div>
             <div className="md:mt-12 mt-0">
-              <div className="flex gap-4 flex-col md:grid text-black lg:gap-x-56 lg:gap-y-9 lg:grid-cols-2">
+              <div className="flex gap-4 flex-col md:grid text-white lg:gap-x-56 lg:gap-y-9 lg:grid-cols-2">
                 <div>
                   <h1 className="font-light">Full Name:</h1>
                   <p
@@ -91,7 +91,7 @@ const Dashboard = () => {
                 </div>
               </div>
 
-              <div className="flex gap-4 flex-col md:grid text-black lg:gap-x-56 lg:gap-y-9 lg:grid-cols-2">
+              <div className="flex gap-4 flex-col md:grid text-white lg:gap-x-56 lg:gap-y-9 lg:grid-cols-2">
                 <div>
                   <h1 className="font-light">Email ID:</h1>
                   <p
@@ -110,7 +110,7 @@ const Dashboard = () => {
               </div>
 
               {!ambassador ? (
-                <div className="md:mt-16 mt-4 p-4 rounded-xl text-white text-lg  bg-[#dd6341]">
+                <div className="md:mt-16 mt-4 p-4 rounded-xl text-black text-lg  bg-[#dd6341]">
                   <p>Click below to become an Ambassador</p>
                   <button
                     onClick={() => {
@@ -122,7 +122,7 @@ const Dashboard = () => {
                   </button>
                 </div>
               ) : (
-                <div className="flex flex-col gap-1 md:mt-16 mt-4 p-4 rounded-xl text-white text-sm bg-[#dd6341]">
+                <div className="flex flex-col gap-1 md:mt-16 mt-4 p-4 rounded-xl text-black text-sm bg-[#dd6341]">
                   <p className="flex flex-col">
                     Ambassador Referral Code:{" "}
                     <span className="flex">
