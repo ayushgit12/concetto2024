@@ -1,7 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import "./index.css";
 import Dashboard from "./managers/Dashboard.jsx";
-import Register from "./components/User/Register.jsx";
 import Login from "./components/User/Login.jsx";
 import OTP from "./components/User/OTP.jsx";
 import OTPVerifed from "./components/User/OTPVerifed.jsx";
@@ -13,6 +12,7 @@ import Home from './pages/Home'
 import Events from './pages/Events';
 import CampusAmbassador from './pages/CampusAmbassador';
 import AboutUs from './pages/AboutUs';
+import SignUp from "./components/User/Register.jsx";
 
 function App() {
   return (
@@ -24,7 +24,7 @@ function App() {
         <Route path="/campus-ambassador" element={<CampusAmbassador />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/register" element={<Register />} />
+        <Route path="/register" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
         <Route path="/otp-verification" element={<OTP />} />
         <Route path="/otp-verified" element={<OTPVerifed />} />
