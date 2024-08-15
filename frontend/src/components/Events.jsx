@@ -39,7 +39,7 @@ export default function Events(){
             
                 <div className='grid grid-rows-3 grid-cols-5 w-[60vw] h-fit text-white border-2 border-white rounded-3xl p-3 '>
                     <div className='row-span-2 col-start-1 col-span-2 m-2'><img src={robot} alt="" /></div>
-                    <div className='row-start-3 row-span-1 col-start-1 col-span-2 m-2 flex items-center justify-center'><button className='bg-[#F9538B] font-star-eagle py-2 px-3 rounded-2xl transition-transform transform  duartion-500 hover:scale-105 hover:shadow-lg'>register</button></div>
+                    <div className='row-start-3 row-span-1 col-start-1 col-span-2 m-2 flex items-center justify-center'><button className='bg-[#F9538B] font-star-eagle py-2 px-3 rounded-2xl transition-transform transform  duration-500 hover:scale-105 hover:shadow-lg'>register</button></div>
                     <div className='row-span-1 col-start-3 col-span-3 m-2 text-2xl font-semibold font-star-eagle'><h2>Competition </h2></div>
                     <div className='row-start-2 row-span-2 col-start-3 col-span-3 m-3'><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quaerat neque aliquid, fugit repudiandae sit, quidem adipisci veritatis nemo autem animi voluptatem dolorum mollitia temporibus impedit commodi vel laborum. Dolorem!</p></div>
                 </div>

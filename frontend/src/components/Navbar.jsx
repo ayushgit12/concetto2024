@@ -11,48 +11,59 @@ export default function Navbar(){
     return (
         <nav>
 
-        <div className='bg-peach flex flex-wrap items-center text-maroon font-semibold'>
-  <Link to={"/"} className="flex-auto btn btn-ghost text-xl">
-    
-        <img src={logo} className='h-[64px]' alt="" />
-    
-  </Link >
-  <Link className='flex-auto  hover:text-orangee'>
-        ABOUT US
-  </Link>
-  <Link className='flex-auto  hover:text-orangee' to='/events'>
-        EVENTS
-  </Link>
-  <Link className='flex-auto  hover:text-orangee'>
-        ACCOMODATION
-  </Link>
-  <Link className='flex-auto  hover:text-orangee'>
-        WORKSHOPS
-  </Link>
-  <Link className='flex-auto  hover:text-orangee'>
-        MERCHANDISE
-  </Link>
-  <Link className='flex-auto  hover:text-orangee'>
-        SPONSORS
-  </Link>
-  <Link className='flex-auto  hover:text-orangee'>
-        TEAMS
-  </Link>
-  
+        <div className='bg-tranparent grid grid-cols-11 w-full grid-rows-1 items-center text-white '>
+            <div className='col-start-1 col-span-2'>
 
- 
-  <div className="dropdown dropdown-end">
-  <div tabIndex={0} role="button" className="btn m-1 bg-peach border-transparent hover:bg-[#c4a48e] hover:border-transparent">
-  <img src="personn.png" className='h-[32px] ' alt="" />    
+  <NavLink to={"/"} className="flex-1 btn btn-ghost text-xl font-aclonica">
+    
+        {/* <img src={logo} className='h-[64px]' alt="" /> */}
+        Concetto 2024
+    
+  </NavLink >
+            </div>
+  <div className='col-start-5 col-span-3 flex flex-wrap'>
+
   
+  <NavLink
+            to="/events"
+            className={({ isActive }) => 
+              `flex-auto px-4 py-2 font-poppins
+               ${isActive ? 'text-[#F9538B] font-bold' : 'text-white hover:text-[#F9538B]'}`
+            }
+          >
+            Events
+          </NavLink>
+  <NavLink className={({ isActive }) => 
+              `flex-auto px-4 py-2 font-poppins
+               ${isActive ? 'text-[#F9538B] font-bold' : 'text-white hover:text-[#F9538B]'}`
+            } to='about-us'>
+        About Us
+  </NavLink>
+  <NavLink className={({ isActive }) => 
+              `flex-auto px-4 py-2 font-poppins
+               ${isActive ? 'text-[#F9538B] font-bold' : 'text-white hover:text-[#F9538B]'}`
+            } to='/campus-ambassador'>
+        Campus Ambassador
+  </NavLink>
   
   </div>
-  <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow text-orangee bg-peach">
-    <li><Link to='/register'>Register</Link></li>
-    <li><Link to='/login'>Sign In</Link></li>
-  </ul>
-</div>
-</div>
+  
+
+  <div className='col-start-10 col-span-2 flex flex-row flex-wrap'>
+  <button className='flex-auto  transition-transform transform  duration-500 hover:scale-105 hover:shadow-lg font-poppins text-white bg-gradient-1 rounded-bl-lg rounded-tr-lg'
+   onClick={()=>navigate('/register')}>
+        Signup
+  </button>
+  <button 
+              className='flex-auto px-4 py-2 font-poppins text-white hover:text-[#F9538B]'
+              onClick={()=>navigate('/login')}>
+        Login
+  </button>
+
+  </div>
+
+ 
+  </div>
         </nav>
     );
 }

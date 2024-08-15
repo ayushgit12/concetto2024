@@ -10,10 +10,9 @@ import Leaderboard from "./managers/Leaderboard.jsx";
 
 import Events from "./components/Events.jsx";
 
-=======
+
 import React from 'react';
 import Home from './pages/Home'
-import Events from './pages/Events';
 import CampusAmbassador from './pages/CampusAmbassador';
 import AboutUs from './pages/AboutUs';
 import SignUp from "./components/User/Register.jsx";

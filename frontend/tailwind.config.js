@@ -6,14 +6,19 @@ export default {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        'gradient-1': 'linear-gradient(to right, #BC3CD8, #C54B8C)',
+        
+      },
       colors:{
         'orangee':'#d1512d',
         'maroon':'#411530',
         'peach':'#f5c7a9',
       },
       fontFamily: {
-        'star-eagle': ['Star Eagle Expand Bold', 'sans-serif']
-
+        'star-eagle': ['Star Eagle Expand Bold', 'sans-serif'],
+        'aclonica': ['Aclonica', 'sans-serif'],
+        'poppins': ['Poppins', 'sans-serif'],
     },
 
     keyframes: {
