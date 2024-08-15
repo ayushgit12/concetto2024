@@ -1,11 +1,16 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import './btn.css'
 
 function OTPVerifed() {
+  const navigate = useNavigate();
+  const karo = async () => {
+    navigate('/dashboard')
+  }
   return (
     <>
-      <div className="bg-[#F5E8E4] min-h-screen p-20 ">
-        <div class="max-w-xl w-full mx-auto bg-[#411530] rounded-xl overflow-hidden">
+      <div className="bg-[#050C13] min-h-screen p-20 flex justify-start align-middle ">
+        <div class="max-w-xl w-full h-96 mx-auto bg-white/10 rounded-xl overflow-hidden">
           <div class="max-w-md mx-auto pt-12 pb-14 px-5 text-center">
             <div class="inline-flex items-center justify-center w-12 h-12 mb-5 rounded-full">
               <svg
@@ -75,19 +80,31 @@ function OTPVerifed() {
               Account has been verified Successfully.
             </p>
           </div>
-          <div class="pt-5 pb-6 px-6 text-right bg-gray-800 -mb-2">
-            <a
-              href="#"
-              class="inline-block w-full sm:w-auto py-3 px-5 mb-2 mr-4 text-center font-semibold leading-6 text-gray-200 bg-gray-500 hover:bg-gray-400 rounded-lg transition duration-200"
-            >
-              Cancel
-            </a>
-            <Link
-              to='/dashboard'
-              class="inline-block w-full sm:w-auto py-3 px-5 mb-2 text-center font-semibold leading-6 text-blue-50 bg-green-500 hover:bg-green-600 rounded-lg transition duration-200"
-            >
-              Confirm
-            </Link>
+          <div class="pt-5 pb-6 px-6 text-right bg-white/10  mb-2">
+            
+            <div className="flex items-center justify-evenly ">
+              <button class="btn-53">
+                <div class="original">Cancel</div>
+                <div class="letters">
+                  <span>C</span>
+                  <span>A</span>
+                  <span>N</span>
+                  <span>C</span>
+                  <span>E</span>
+                  <span>L</span>
+                </div>
+              </button>
+              <button class="btn-53" onClick={karo}>
+                <div class="original">Enter</div>
+                <div class="letters">
+                  <span>E</span>
+                  <span>N</span>
+                  <span>T</span>
+                  <span>E</span>
+                  <span>R</span>
+                </div>
+              </button>
+            </div>
           </div>
         </div>
       </div>
