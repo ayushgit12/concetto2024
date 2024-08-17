@@ -23,37 +23,45 @@ const Video = () => {
     const cursor = document.querySelector("#cursor")
     const video = document.querySelector("video")
 
-    let clientX 
+    let clientX
 
     video.addEventListener('mousemove', (e) => {
       clientX = e.clientX
       cursor.classList.remove("hidden")
       cursor.style.transform = `translate(calc(${e.clientX}px - 5rem) , calc(${e.clientY}px - 15rem ))`
+
+      window.addEventListener('scroll', (e) => {
+        cursor.style.transform = `translate(calc(${e.clientX}px - 5rem) , calc(${e.clientY + window.scrollY}px - 15rem ))`
+      })
+
     })
 
     video.addEventListener('mouseleave', () => {
       cursor.classList.add("hidden")
+
     })
+
+
 
   }
 
   useEffect(() => {
-    customCursor()
+    // customCursor()
   }, [])
 
 
 
   return (
     <>
-      <div id="video" className=' py-16 w-full overflow-hidden cursor-none' style={{ height: `${window.innerHeight * 0.9}px` }}>
+      <div id="video" className=' py-16 w-full overflow-hidden ' style={{ height: `${window.innerHeight * 0.9}px` }}>
 
-        <div className='overflow-hidden relative mx-auto w-10/12 bg-slate-500'>
-          <div id="cursor" className="  w-16 h-16 rounded-full absolute top-0 left-0  text-black font-[700]  " style={{ boxShadow: "0 0 20px #0707529c" }}>
+        <div className='overflow-hidden h-full relative mx-auto w-10/12 bg-slate-500'>
+          {/* <div id="cursor" className=" hidden  w-16 h-16 rounded-full absolute top-0 left-0  text-black font-[700]  " style={{ boxShadow: "0 0 20px #0707529c" }}>
             <div className="cursor w-full h-full flex items-center rounded-full justify-center ">
               <div className=' text-center'>pause</div>
             </div>
-          </div>
-          <video className=' w-full h-full object-cover ' src={sampleVideo} loop muted autoPlay onClick={videoCOntrols}></video>
+          </div> */}
+          <video className=' w-full h-full object-cover cursor-grab' src={sampleVideo} loop muted autoPlay onClick={videoCOntrols}></video>
         </div>
       </div>
     </>
